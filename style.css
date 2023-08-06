@@ -7,7 +7,6 @@
     background-color: #3c5077;
     width: 100%;
     height: 100vh;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,13 +21,23 @@
 }
 .modal-box {
     position: absolute;
+    top:0;
     left:50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-50%) scale(0.1);
     background-color: #fff;
     text-align: center;
     border-radius: 5px;
     width: 400px;
     padding: 0 30px 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.modal-box.active {
+    top:50%;
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+    visibility: visible;
 }
 .modal__img {
     margin-top: -40px;
